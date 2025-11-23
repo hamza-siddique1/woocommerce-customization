@@ -1,0 +1,24 @@
+# 1. Ignore EVERYTHING inside wp-content
+*
+
+# 2. Re-include the two folders we need to track
+# The leading ! tells git to NOT ignore this item.
+!/themes/
+!/plugins/
+
+# 3. Ignore everything inside /themes/ and /plugins/
+# Then ONLY re-include our specific theme/plugin folders.
+themes/*
+plugins/*
+
+# 4. Explicitly include *only* your custom theme/plugin
+# (The double asterisk ** is necessary to allow Git to track files inside.)
+!/themes/woo-child/**
+!/plugins/woo-customize/**
+
+# 5. Standard WordPress wp-content exclusions
+# Ensure these folders are always ignored even if they contain content
+/uploads/
+/upgrade/
+/cache/
+/blogs.dir/
